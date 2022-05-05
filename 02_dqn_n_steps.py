@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import gym
 import ptan
 import argparse
@@ -11,6 +10,8 @@ from tensorboardX import SummaryWriter
 from lib import dqn_model, common
 
 REWARD_STEPS_DEFAULT = 2
+
+#Multiple steps
 
 
 if __name__ == "__main__":
