@@ -13,6 +13,7 @@ from tensorboardX import SummaryWriter
 
 from lib import dqn_model, common
 
+#Learn exploration characteristics during training and not a seperate schedule
 
 class NoisyDQN(nn.Module):
     def __init__(self, input_shape, n_actions):
