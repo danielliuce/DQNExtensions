@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import gym
 import ptan
 import argparse
@@ -14,15 +13,19 @@ from tensorboardX import SummaryWriter
 
 from lib import dqn_model, common
 
-# n-step
+#Bellman equation also uses double DQN action
+#Two seperate paths for value of state distirbution and advantage (dueling)
+#The layers will be noisy vairants of nn.Linear
+
+# n-step for Bellman equation
 REWARD_STEPS = 2
 
-# priority replay
+# priority replay for buffer
 PRIO_REPLAY_ALPHA = 0.6
 BETA_START = 0.4
 BETA_FRAMES = 100000
 
-# C51
+# C51 (predicts the value probability distribution of actions)
 Vmax = 10
 Vmin = -10
 N_ATOMS = 51
