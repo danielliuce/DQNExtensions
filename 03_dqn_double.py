@@ -15,6 +15,9 @@ from lib import dqn_model, common
 STATES_TO_EVALUATE = 1000
 EVAL_EVERY_FRAME = 100
 
+#Choosing actions for next state using trained network but taking values of Q from target net
+#Accounts for over estimation
+
 #double extra arugment turns on and off the double-DQN way of caluclating actions to take
 def calc_loss(batch, net, tgt_net, gamma, device="cpu", double=True):
     states, actions, rewards, dones, next_states = common.unpack_batch(batch)
